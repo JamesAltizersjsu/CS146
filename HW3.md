@@ -1,0 +1,27 @@
+Problem 1:
+We have discussed insertion sort as an algorithm. Now that we know how to analyze algorithms, let's apply the same analysis to Insertion Sort!
+
+You may refer to class slides/ online resources to refresh your memory on the insertion sort algorithm. 
+
+ the best case is O(n) given that if the list is already sorted it will take the length of the list to iterate through it. But the worst and average case is O(n^2) given that if its not in 
+order the amount of time will be to go through it for every n making it n*n or n^2
+
+Problem 2:
+Below is the pseudocode to perform matrix multiplication, given two matrices A and B. 
+
+MATRIX_MULTIPLY(A, B): 
+  if columns(A) ≠ rows(B): 
+    raise ValueError("Matrix multiplication is not defined.") 
+
+  rows_A ← number of rows in A 
+  cols_A ← number of columns in A 
+  cols_B ← number of columns in B 
+  result ← matrix of size rows_A x cols_B filled with zeros 
+
+  for i from 1 to rows_A do: 
+    for j from 1 to cols_B do: 
+    sum ← 0 
+      for k from 1 to cols_A do: 
+        sum ← sum + A[i][k] * B[k][j] 
+      result[i][j] ← sum return result
+the worst and average is O(n^2) because the 2 for loops make n be iterated 2 times aand the best case is O(1) if the columns and rows dont match and the exception is raised.
