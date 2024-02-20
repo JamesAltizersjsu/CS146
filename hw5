@@ -1,0 +1,37 @@
+Problem 1:
+For each of the following recurrences, verify the answer you get by applying the master method, by solving the recurrence algebraically OR applying the recursion tree method. 
+
+T(N) = 2T(N-1) + 1
+  1. T(N) = 2T(N-1) + 1
+   T(N-1) = 2T(N-2) + 1
+   T(N-2) = 2T(N-3) + 1
+   etc. 
+  2=a a>1
+   T(N) = 2(2T(N-2) + 1) + 1 = 4T(N-2) + 3
+   T(N) = 2[2[2T(N-3) + 1] + 1] + 1 = 8T(N-3) + 7
+   T(N) = 16T(N-4) + 15
+   etc.
+   T(N) = (2^k) * T(N-k) + (2^k - 1)=theta(2^n)
+T(N) = 3T(N-1) + n same as previous but with a 3 so
+   T(N) = 3(3T(N-2) + 1) + 1 = 9T(N-2) + n
+   T(N) = 3[3[3T(N-3) + n] + n] + n = 8T(N-3) + n
+   T(N) = 27T(N-4) + n
+  =theta(n^3*n)
+   etc.
+   T(N) = (2^k) * T(N-k) + (3^k - 1)
+  f(n) = 1/12 ((4C + 9) 3^n - 6 n - 9) (where C is an arbitrary parameter)
+T(N) = 9T(N/2) + n2=theta(n^2)
+T(N) = 100T(N/2) + nlog2cn + 1  (c is a constant)=theta(n^2log2cn+1) using master method
+T(N) = 4T(N/2) + n2logn   theta(n^2 long) bc log2(4)=2 and n^2>n^2logn
+T(N) = 5T(N/2) + n2/logn=log2(5)*loglogn theta(n^(log2(5))*loglogn)
+ 
+
+Problem 2:
+Below is some pseudocode. Come up with a recurrence relation, and solve that recurrence relation using any method of your choice.  
+master method  case 2 reveals this to be equivalent to: 2T(N/2)+N, which evaluates to O(nlogn)
+yetAnotherFunc(n): 
+  if n > 1: 
+    for(i=0;i<10n;i++)
+      doSomething;
+    yetAnotherFunc(n/2);
+    yetAnotherFunc(n/2);
